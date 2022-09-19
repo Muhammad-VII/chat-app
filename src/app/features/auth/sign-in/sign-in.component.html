@@ -1,1 +1,17 @@
-<p>sign-in works!</p>
+<app-form-container title="Sign In">
+  <form [formGroup]="signInForm" class="form" (submit)="signIn()">
+    <mat-form-field class="form-field">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email" placeholder="email">
+      <mat-error *ngIf="signInForm.controls['email'].hasError('email')">Enter a valid email</mat-error>
+    </mat-form-field>
+    <mat-form-field class="form-field">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password" placeholder="Password" [type]="hide ? 'password' : 'text'">
+      <mat-error *ngIf="signInForm.controls['password'].hasError('minlength')">Password is too short</mat-error>
+      <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+    </mat-form-field>
+
+    <button mat-raised-button color="accent" [disabled]="signInForm.invalid">Sign In</button>
+  </form>
+</app-form-container>

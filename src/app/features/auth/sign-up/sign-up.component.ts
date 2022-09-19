@@ -13,7 +13,7 @@ import { AuthService } from '../auth.service';
 })
 export class SignUpComponent implements OnInit, OnDestroy {
   subscribtions$: Subscription[] = []
-  hide = true;
+  hide:boolean = true;
   signUpForm: FormGroup = new FormGroup<{
     displayName: FormControl<string | null>,
     email: FormControl<string | null>,
