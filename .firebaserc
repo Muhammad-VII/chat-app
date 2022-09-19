@@ -1,0 +1,14 @@
+{
+  "targets": {
+    "chat-app-3753d": {
+      "hosting": {
+        "firebase-chat-app": [
+          "chat-app-3753d"
+        ]
+      }
+    }
+  },
+  "projects": {
+    "default": "chat-app-3753d"
+  }
+}
